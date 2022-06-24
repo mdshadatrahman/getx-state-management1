@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:getx/views/animal_homepage.dart';
+import 'package:getx/views/route_management1.dart';
 import 'package:getx/views/shopping_page.dart';
 
 void main() {
@@ -17,7 +19,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: ShoppingPage(),
+      home: AnimalHome(),
+      // home: ShoppingPage(),
     );
   }
 }
