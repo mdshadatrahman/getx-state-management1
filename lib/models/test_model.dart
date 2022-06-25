@@ -10,7 +10,12 @@ class Cat {
   }
 
   void decreaseAge() {
-    age.value--;
+    if(age.value <= 0){
+      age.value = 0;
+    } else {
+      age.value--;
+    }
+
   }
 
   void changeName(String newName) {

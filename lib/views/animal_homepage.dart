@@ -2,29 +2,24 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:getx/models/test_model.dart';
 
-class AnimalHome extends StatefulWidget {
-  const AnimalHome({Key? key}) : super(key: key);
+class AnimalHome extends StatelessWidget {
+  // TextEditingController nameController = TextEditingController();
 
-  @override
-  State<AnimalHome> createState() => _AnimalHomeState();
-}
-
-class _AnimalHomeState extends State<AnimalHome> {
-  TextEditingController nameController = TextEditingController();
-
-  @override
-  void initState() {
-    super.initState();
-  }
-
-  @override
-  void dispose() {
-    super.dispose();
-    nameController.dispose();
-    print('dispose method called');
-  }
-
+  // @override
+  // void initState() {
+  //   super.initState();
+  // }
+  //
+  // @override
+  // void dispose() {
+  //   super.dispose();
+  //   nameController.dispose();
+  //   print('dispose method called');
+  // }
+  //
   Cat _cat = Cat();
+
+  // Cat _cat1 = Cat().obs as Cat;
 
   @override
   Widget build(BuildContext context) {
@@ -65,7 +60,7 @@ class _AnimalHomeState extends State<AnimalHome> {
                     ),
                   ),
                   Obx(
-                      () => Text(
+                    () => Text(
                       '${_cat.age.toString()}',
                       style: TextStyle(
                         fontSize: 20,
@@ -83,7 +78,7 @@ class _AnimalHomeState extends State<AnimalHome> {
                     ),
                   ),
                   Obx(
-                    ()=> _cat.isIll == true
+                    () => _cat.isIll == true
                         ? Text(
                             'Yes',
                             style: TextStyle(
@@ -100,14 +95,14 @@ class _AnimalHomeState extends State<AnimalHome> {
                 ],
               ),
               SizedBox(height: 20),
-              TextField(controller: nameController),
+              // TextField(controller: nameController),
               SizedBox(height: 10),
-              ElevatedButton(
-                onPressed: () {
-                  _cat.changeName(nameController.text);
-                },
-                child: Text('Change Name'),
-              ),
+              // ElevatedButton(
+              //   onPressed: () {
+              //     _cat.changeName(nameController.text);
+              //   },
+              //         child: Text('Change Name'),
+              //       ),
               ElevatedButton(
                 onPressed: () {
                   _cat.increaseAge();
@@ -126,7 +121,6 @@ class _AnimalHomeState extends State<AnimalHome> {
                 },
                 child: Text('Change Illness'),
               ),
-
             ],
           ),
         ),
